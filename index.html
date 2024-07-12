@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <center>
+        <table border="4">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <td><input type="text" name="fname" id="fname"></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Phone</th>
+                    <td><input type="text" name="phone" id="phone"></td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td><input type="text" name="email" id="email"></td>
+                </tr>
+                <tr id="btna">
+                    <td colspan="2"><input type="button" name="button" id="btn" value="Submit" onclick="AddRow()"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table border="4" id="show">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be added here -->
+            </tbody>
+        </table>
+    </center>
+    <script>
+        var list1 = [];
+        var list2 = [];
+        var list3 = [];
+
+        var n = 1;
+        var x = 0;
+
+        function AddRow(){
+            var fname = document.getElementById("fname").value;
+            var phone = document.getElementById("phone").value;
+            var email = document.getElementById("email").value;
+
+            if (fname === "" || phone === "" || email === "") {
+                alert("All fields must be filled out");
+                return;
+            }
+
+            var AddRown = document.getElementById('show').getElementsByTagName('tbody')[0];
+            var newRow = AddRown.insertRow();
+
+            list1[x] = fname;
+            list2[x] = phone;
+            list3[x] = email;
+
+            var cel1 = newRow.insertCell(0);
+            var cel2 = newRow.insertCell(1);
+            var cel3 = newRow.insertCell(2);
+
+            cel1.innerHTML = list1[x];
+            cel2.innerHTML = list2[x];
+            cel3.innerHTML = list3[x];
+
+            n++;
+            x++;
+        }
+    </script>
+</body>
+</html>

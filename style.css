@@ -1,0 +1,18 @@
+table{
+    margin-top: 50px;
+    text-align: center;
+    /* background: rgb(74, 234, 234); */
+    background-color: rgb(164, 164, 233);
+    color: black;
+    width: 50%;
+}
+td input{
+    width: 90%;
+    height: 30px;
+    font-size: 15px;
+}
+
+#show th,#show td{
+    padding: 13px;
+
+}
